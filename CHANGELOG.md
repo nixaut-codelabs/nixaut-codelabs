@@ -1,5 +1,11 @@
 # Changelog
 
+## [2026-10-04] - Traction measurement loop
+
+### Added
+- `scripts/npm-metrics.sh` — appends a dated row of last-month npm downloads per package + total stars to the metrics table; idempotent per day
+- `metrics/npm-downloads.md` — baseline row 2026-10-04 (43/95/19/22/51 dl, 8 stars); monthly cron appends
+
 ## [2026-10-04] - Animated SVG layer + richer Markdown
 
 ### Added
