@@ -1,5 +1,15 @@
 # Changelog
 
+## [2026-10-04] - Animated SVG layer + richer Markdown
+
+### Added
+- `terminal.svg` — typing terminal (`bun test` / `bun run bench` / `git push`), clip-path type-on + blinking cursors; no fabricated pass counts
+- `stack-rail.svg` — toolchain rail with flowing dash and staggered node pulses
+
+### Modified
+- `hero.svg` — rev 2: self-drawing waveform (`pathLength` dash trick), scanline sweep, blinking cursor block, breathing glow, peak pips; all animations honor `prefers-reduced-motion` and degrade to the finished state without CSS
+- `README.md` — terminal + stack-rail embedded via `<picture>`, ASCII trajectory replaced with mermaid `timeline`, bunaptic bench methodology exposed in a `<details>` panel (warmup 2 · repeats 7 · median/p95, straight from `bench/harness.ts`)
+
 ## [2026-10-04] - Profile datasheet redesign
 
 ### Added

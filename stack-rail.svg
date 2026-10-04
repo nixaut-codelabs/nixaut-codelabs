@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" width="1200" height="120" role="img" aria-label="Toolchain: TypeScript, Bun, Rust-WASM, WebGPU, Node.js, FFmpeg">
+  <style>
+    .dash { animation: flow 3s linear infinite; }
+    .node { animation: pulse 4s ease-in-out infinite; }
+    @keyframes flow  { to { stroke-dashoffset: -24; } }
+    @keyframes pulse { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { .dash, .node { animation: none; } }
+  </style>
+
+  <rect width="1200" height="120" fill="#0c0c0e"/>
+  <line class="dash" x1="60" y1="60" x2="1140" y2="60" stroke="#2a2a32" stroke-width="2" stroke-dasharray="6 6"/>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15" letter-spacing="1.2" text-anchor="middle">
+    <g class="node" style="animation-delay:0s">
+      <circle cx="120" cy="60" r="7" fill="#e8a33d"/>
+      <text x="120" y="96" fill="#8a8a92">TypeScript</text>
+    </g>
+    <g class="node" style="animation-delay:.5s">
+      <circle cx="312" cy="60" r="7" fill="#e8a33d"/>
+      <text x="312" y="96" fill="#8a8a92">Bun</text>
+    </g>
+    <g class="node" style="animation-delay:1s">
+      <circle cx="504" cy="60" r="7" fill="#e8a33d"/>
+      <text x="504" y="96" fill="#8a8a92">Rust-WASM</text>
+    </g>
+    <g class="node" style="animation-delay:1.5s">
+      <circle cx="696" cy="60" r="7" fill="#e8a33d"/>
+      <text x="696" y="96" fill="#8a8a92">WebGPU</text>
+    </g>
+    <g class="node" style="animation-delay:2s">
+      <circle cx="888" cy="60" r="7" fill="#e8a33d"/>
+      <text x="888" y="96" fill="#8a8a92">Node.js</text>
+    </g>
+    <g class="node" style="animation-delay:2.5s">
+      <circle cx="1080" cy="60" r="7" fill="#e8a33d"/>
+      <text x="1080" y="96" fill="#8a8a92">FFmpeg</text>
+    </g>
+  </g>
+</svg>

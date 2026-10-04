@@ -11,6 +11,11 @@ The common thread: **make the slow thing fast and the fragile thing crash-safe �
 
 `7 public repos · 5 packages on npm · MIT / Apache-2.0 · Bun + TypeScript strict`
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="terminal.svg">
+  <img alt="Terminal: bun test, bun run bench, git push — only when green" src="terminal.svg">
+</picture>
+
 ## Shipped
 
 | Project | What it does | npm |
@@ -20,6 +25,11 @@ The common thread: **make the slow thing fast and the fragile thing crash-safe �
 | [**general.ai**](https://github.com/nixaut-codelabs/general.ai) | OpenAI-compatible orchestration runtime — tools, subagents, retries, provider key rotation, context management | `1.0.0` · ~22 dl/mo |
 | [**bunaptic**](https://github.com/nixaut-codelabs/bunaptic) | Bun-first neural network & neuroevolution engine — typed arrays, Workers, Rust-WASM kernels, Node fallback | `0.1.0-alpha.1` · ~19 dl/mo |
 | [**opencode-beacon**](https://github.com/nixaut-codelabs/opencode-beacon) | Semantic code search plugin for OpenCode — hybrid vector + BM25 search, dependency graph, change-impact analysis | `1.3.3` |
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="stack-rail.svg">
+  <img alt="Toolchain: TypeScript, Bun, Rust-WASM, WebGPU, Node.js, FFmpeg" src="stack-rail.svg">
+</picture>
 
 ## Case notes
 
@@ -44,6 +54,23 @@ const result = await tf.train({
 **bunaptic — neuroevolution rebuilt for modern runtimes.**
 Neataptic proved flexible JS neural-network APIs are worth having; its runtime predates typed arrays, worker threads and WASM. Bunaptic keeps the API spirit and rebuilds the engine: flat `Float64Array` genomes, population evaluation across Workers, Rust-WASM kernels for dot-product-heavy paths, dense feed-forward fast paths. The README states the alpha limits on purpose — recurrent `adam`/`rmsprop` still run the TypeScript BPTT path.
 
+<details>
+<summary><b>How bunaptic benchmarks are timed</b> — the harness, not vibes</summary>
+
+<br/>
+
+`bench/harness.ts` measures every kernel the same way:
+
+| Stage | What happens |
+|---|---|
+| warmup | `2` runs discarded (JIT + WASM compile excluded) |
+| repeats | `7` timed runs, checksum-verified so dead-code elimination can't cheat |
+| reported | **median** and **p95** of the sorted samples |
+
+Profiles via `BENCH_PROFILE`: `ci` (warmup 1 · repeats 3 · 0.25× scale), `quick` (1 · 5 · 0.5×), `large` (2 · ≥10 · 2×), default `standard`.
+
+</details>
+
 **general.ai — orchestration as a protocol, not a wrapper.**
 Raw SDK calls make agent behavior drift. general.ai adds a protocol layer on top of any OpenAI-compatible endpoint: tool and subagent definitions, retries, provider key rotation, request queueing, context compression and structured checkpoints — plus a `native` mode for when you want exact SDK semantics and nothing else.
 
@@ -55,12 +82,15 @@ Embeddings alone miss exact identifiers; keywords alone miss intent. Beacon fuse
 
 ## Trajectory
 
-```
-2025      robify → teachable-machine.js → tfjs-turbo
-          game tooling, then ML inference on Node, then GPU without native bindings
-2026-03   general.ai        LLM orchestration runtime
-2026-04   bunaptic          neuroevolution on Bun + Rust-WASM
-2026-06   opencode-beacon   semantic tooling for AI coding agents
+```mermaid
+timeline
+    title From game tooling to ML infrastructure
+    2025 : robify — Roblox FFlag library
+         : teachable-machine.js — ML inference on Node
+         : tfjs-turbo — GPU without native bindings
+    2026 : general.ai — LLM orchestration runtime
+         : bunaptic — neuroevolution on Bun + Rust-WASM
+         : opencode-beacon — semantic tooling for AI agents
 ```
 
 ## How I work

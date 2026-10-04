@@ -18,10 +18,28 @@
     </linearGradient>
   </defs>
 
+  <style>
+    .wave { animation: draw 2.4s cubic-bezier(.4,0,.2,1) forwards; }
+    .fill { animation: rise 1.2s ease-out 1.6s both; }
+    .scan { animation: sweep 7s linear 2.6s infinite; }
+    .cur  { animation: blink 1.1s steps(1) infinite; }
+    .glow { animation: breathe 6s ease-in-out infinite; }
+    .pip  { animation: pip 2.4s ease-in-out infinite; }
+    @keyframes draw    { from { stroke-dashoffset: 1; } }
+    @keyframes rise    { from { opacity: 0; } }
+    @keyframes sweep   { from { transform: translateX(0); } to { transform: translateX(1088px); } }
+    @keyframes blink   { 0%, 60% { opacity: 1; } 60.1%, 100% { opacity: 0; } }
+    @keyframes breathe { 0%, 100% { opacity: .6; } 50% { opacity: 1; } }
+    @keyframes pip     { 0%, 100% { opacity: .2; } 50% { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) {
+      .wave, .fill, .scan, .cur, .glow, .pip { animation: none; }
+    }
+  </style>
+
   <!-- panel -->
   <rect width="1200" height="400" fill="#0c0c0e"/>
   <rect width="1200" height="400" fill="url(#grid)"/>
-  <rect width="1200" height="400" fill="url(#glow)"/>
+  <rect class="glow" width="1200" height="400" fill="url(#glow)"/>
 
   <!-- corner ticks -->
   <g stroke="#3a3a44" stroke-width="2" fill="none">
@@ -31,10 +49,12 @@
 
   <!-- top datasheet label -->
   <text x="56" y="72" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15" letter-spacing="3.4" fill="#8a8a92">NIXAUT-CODELABS  //  PROFILE.DATASHEET</text>
+  <text x="1144" y="72" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" letter-spacing="2" fill="#4a4a54">REV 2026-10</text>
   <rect x="56" y="86" width="120" height="3" fill="url(#edge)"/>
 
   <!-- identity -->
   <text x="54" y="182" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="86" font-weight="700" letter-spacing="1" fill="#f4f4f2">UMUT CAN</text>
+  <rect class="cur" x="486" y="112" width="44" height="74" fill="#e8a33d" opacity="1"/>
 
   <!-- role -->
   <text x="58" y="226" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="21" letter-spacing="1.6" fill="#e8a33d">SYSTEMS  ·  RUNTIMES  ·  ML INFRASTRUCTURE</text>
@@ -44,13 +64,18 @@
     <line x1="56" y1="322" x2="1144" y2="322" stroke="#26262e" stroke-width="1"/>
     <line x1="56" y1="288" x2="1144" y2="288" stroke="#1c1c22" stroke-width="1"/>
     <line x1="56" y1="356" x2="1144" y2="356" stroke="#1c1c22" stroke-width="1"/>
-    <path d="M56 330 L150 330 L178 300 L206 358 L234 318 L300 318 L330 274 L360 366 L392 300 L470 300 L500 288 L528 340 L556 322 L640 322 L672 268 L704 372 L734 316 L810 316 L842 296 L872 344 L900 322 L980 322 L1012 282 L1044 360 L1074 320 L1144 320"
-          fill="none" stroke="#e8a33d" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
-    <path d="M56 330 L150 330 L178 300 L206 358 L234 318 L300 318 L330 274 L360 366 L392 300 L470 300 L500 288 L528 340 L556 322 L640 322 L672 268 L704 372 L734 316 L810 316 L842 296 L872 344 L900 322 L980 322 L1012 282 L1044 360 L1074 320 L1144 320 L1144 372 L56 372 Z"
+    <path class="fill" d="M56 330 L150 330 L178 300 L206 358 L234 318 L300 318 L330 274 L360 366 L392 300 L470 300 L500 288 L528 340 L556 322 L640 322 L672 268 L704 372 L734 316 L810 316 L842 296 L872 344 L900 322 L980 322 L1012 282 L1044 360 L1074 320 L1144 320 L1144 372 L56 372 Z"
           fill="url(#waveFill)" stroke="none"/>
+    <path class="wave" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0"
+          d="M56 330 L150 330 L178 300 L206 358 L234 318 L300 318 L330 274 L360 366 L392 300 L470 300 L500 288 L528 340 L556 322 L640 322 L672 268 L704 372 L734 316 L810 316 L842 296 L872 344 L900 322 L980 322 L1012 282 L1044 360 L1074 320 L1144 320"
+          fill="none" stroke="#e8a33d" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+    <circle class="pip" cx="330" cy="274" r="4" fill="#e8a33d" style="animation-delay:.2s"/>
+    <circle class="pip" cx="672" cy="268" r="4" fill="#e8a33d" style="animation-delay:1.0s"/>
+    <circle class="pip" cx="1012" cy="282" r="4" fill="#e8a33d" style="animation-delay:1.8s"/>
+    <g class="scan"><rect x="56" y="252" width="2" height="118" fill="url(#edge)" opacity=".35"/></g>
   </g>
 
   <!-- bottom readout -->
   <text x="56" y="392" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" letter-spacing="1.4" fill="#6a6a74">boringly reliable  ·  built on Bun / TypeScript / Rust-WASM</text>
-  <text x="1144" y="392" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" letter-spacing="1.4" fill="#6a6a74">SIG ▮ OK</text>
+  <text x="1144" y="392" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" letter-spacing="1.4" fill="#6a6a74">SIG <tspan class="cur" fill="#e8a33d">▮</tspan> OK</text>
 </svg>
