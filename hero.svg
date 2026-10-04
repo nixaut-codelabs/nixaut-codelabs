@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400" role="img" aria-label="Umut Can — nixaut-codelabs — Systems, Runtimes, ML Infrastructure">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#191920" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="glow" cx="26%" cy="42%" r="46%">
+      <stop offset="0%" stop-color="#e8a33d" stop-opacity="0.20"/>
+      <stop offset="60%" stop-color="#e8a33d" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#e8a33d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="waveFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8a33d" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#e8a33d" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e8a33d"/>
+      <stop offset="100%" stop-color="#7a5a24"/>
+    </linearGradient>
+  </defs>
+
+  <!-- panel -->
+  <rect width="1200" height="400" fill="#0c0c0e"/>
+  <rect width="1200" height="400" fill="url(#grid)"/>
+  <rect width="1200" height="400" fill="url(#glow)"/>
+
+  <!-- corner ticks -->
+  <g stroke="#3a3a44" stroke-width="2" fill="none">
+    <path d="M28 52V28h24"/><path d="M1148 28h24v24"/>
+    <path d="M1172 348v24h-24"/><path d="M52 372H28v-24"/>
+  </g>
+
+  <!-- top datasheet label -->
+  <text x="56" y="72" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15" letter-spacing="3.4" fill="#8a8a92">NIXAUT-CODELABS  //  PROFILE.DATASHEET</text>
+  <rect x="56" y="86" width="120" height="3" fill="url(#edge)"/>
+
+  <!-- identity -->
+  <text x="54" y="182" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="86" font-weight="700" letter-spacing="1" fill="#f4f4f2">UMUT CAN</text>
+
+  <!-- role -->
+  <text x="58" y="226" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="21" letter-spacing="1.6" fill="#e8a33d">SYSTEMS  ·  RUNTIMES  ·  ML INFRASTRUCTURE</text>
+
+  <!-- telemetry waveform -->
+  <g transform="translate(0,6)">
+    <line x1="56" y1="322" x2="1144" y2="322" stroke="#26262e" stroke-width="1"/>
+    <line x1="56" y1="288" x2="1144" y2="288" stroke="#1c1c22" stroke-width="1"/>
+    <line x1="56" y1="356" x2="1144" y2="356" stroke="#1c1c22" stroke-width="1"/>
+    <path d="M56 330 L150 330 L178 300 L206 358 L234 318 L300 318 L330 274 L360 366 L392 300 L470 300 L500 288 L528 340 L556 322 L640 322 L672 268 L704 372 L734 316 L810 316 L842 296 L872 344 L900 322 L980 322 L1012 282 L1044 360 L1074 320 L1144 320"
+          fill="none" stroke="#e8a33d" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M56 330 L150 330 L178 300 L206 358 L234 318 L300 318 L330 274 L360 366 L392 300 L470 300 L500 288 L528 340 L556 322 L640 322 L672 268 L704 372 L734 316 L810 316 L842 296 L872 344 L900 322 L980 322 L1012 282 L1044 360 L1074 320 L1144 320 L1144 372 L56 372 Z"
+          fill="url(#waveFill)" stroke="none"/>
+  </g>
+
+  <!-- bottom readout -->
+  <text x="56" y="392" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" letter-spacing="1.4" fill="#6a6a74">boringly reliable  ·  built on Bun / TypeScript / Rust-WASM</text>
+  <text x="1144" y="392" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" letter-spacing="1.4" fill="#6a6a74">SIG ▮ OK</text>
+</svg>

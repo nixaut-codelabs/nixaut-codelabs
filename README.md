@@ -1,96 +1,33 @@
-<h1 align="center">
-  Hi, I'm Umut 👋
-</h1>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="hero.svg">
+  <img alt="Umut Can — nixaut-codelabs — Systems, Runtimes, ML Infrastructure" src="hero.svg">
+</picture>
 
-<h3 align="center">
-  Systems • Backend • ML Infrastructure
-</h3>
+# Umut Can — nixaut-codelabs
 
-<p align="center">
-  Maintainer of <b>tfjs-turbo</b> · WebGPU / WebGL / WASM · Node.js / Bun
-</p>
+I build the layer between machine-learning models and hardware they never talk to directly: GPU bridges with no native bindings, neuroevolution engines on flat typed arrays and Rust-WASM kernels, semantic search over codebases, orchestration runtimes for LLM agents.
 
-<p align="center">
-  <i>Building boringly reliable systems.</i>
-</p>
+The common thread: **make the slow thing fast and the fragile thing crash-safe — then prove it with tests, not adjectives.**
 
-<hr/>
+## Shipped
 
-<h2>🚀 What I Do</h2>
+| Project | What it does | npm |
+|---|---|---|
+| [**teachable-machine.js**](https://github.com/nixaut-codelabs/teachable-machine.js) | Teachable Machine inference on Node.js — batched, RAM-first with disk fallback, image + video through one API | `2.0.2` · ~95 dl/mo |
+| [**tfjs-turbo**](https://github.com/nixaut-codelabs/tfjs-turbo) | TensorFlow.js on Node & Bun via WebGPU / WebGL / WASM — the native-free alternative to tfjs-node, with crash-safe checkpoint & resume | `2.0.0` · ~43 dl/mo |
+| [**general.ai**](https://github.com/nixaut-codelabs/general.ai) | OpenAI-compatible orchestration runtime — tools, subagents, retries, provider key rotation, context management | `1.0.0` · ~22 dl/mo |
+| [**bunaptic**](https://github.com/nixaut-codelabs/bunaptic) | Bun-first neural network & neuroevolution engine — typed arrays, Workers, Rust-WASM kernels, Node fallback | `0.1.0-alpha.1` · ~19 dl/mo |
+| [**opencode-beacon**](https://github.com/nixaut-codelabs/opencode-beacon) | Semantic code search plugin for OpenCode — hybrid vector + BM25 search, dependency graph, change-impact analysis | `1.3.3` |
 
-<ul>
-  <li>Design and build browser-backed ML runtimes</li>
-  <li>Focus on reliability: crash-safe training, checkpoint & resume</li>
-  <li>High-performance JavaScript systems (Node.js, Bun)</li>
-  <li>Developer experience (DX) and test-driven infrastructure</li>
-</ul>
+## How I work
 
-<hr/>
+- **Bun-first.** TypeScript strict, tests colocated with source, `bun test` as the merge gate.
+- **Honest status labels.** Alpha means alpha — the README states what is *not* supported yet, on purpose.
+- **Tests are the spec.** Crash-resume, backend fallback and folding correctness are proven by suites, never claimed in prose.
 
-<h2>🧠 Featured Project</h2>
+## Contact
 
-<p>
-  <a href="https://github.com/nixaut-codelabs/tfjs-turbo">
-    <b>tfjs-turbo</b>
-  </a>
-  <br/>
-  <sub>
-    A production-ready TensorFlow.js runtime for Node.js/Bun using browser backends.
-    <br/>
-    WebGPU / WebGL / WASM · No native bindings · Crash-safe resume · Streaming inference.
-  </sub>
-</p>
+- Email — codelabsnixaut@gmail.com
+- GitHub — [@nixaut-codelabs](https://github.com/nixaut-codelabs)
 
-<ul>
-  <li>✔ Real crash-resilient checkpoint & resume (IndexedDB persistence)</li>
-  <li>✔ WebGPU-first with automatic backend fallback</li>
-  <li>✔ Examples = CI-backed test suite</li>
-  <li>✔ Native-free alternative to tfjs-node</li>
-</ul>
-
-<hr/>
-
-<h2>🛠️ Tech Stack</h2>
-
-<p>
-  <img src="https://img.shields.io/badge/JavaScript-black?logo=javascript&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Node.js-black?logo=node.js&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Bun-black?logo=bun&logoColor=white"/>
-  <img src="https://img.shields.io/badge/WebGPU-black"/>
-  <img src="https://img.shields.io/badge/TensorFlow.js-black"/>
-</p>
-
-<hr/>
-
-<h2>📈 GitHub Stats</h2>
-
-<p>
-  <img
-    src="https://github-readme-stats.vercel.app/api?username=nixaut-codelabs&show_icons=true&theme=dark&hide_border=true"
-    alt="GitHub Stats"
-  />
-</p>
-
-<p>
-  <img
-    src="https://github-readme-stats.vercel.app/api/top-langs/?username=nixaut-codelabs&layout=compact&theme=dark&hide_border=true"
-    alt="Top Languages"
-  />
-</p>
-
-<hr/>
-
-<h2>📫 Contact</h2>
-
-<ul>
-  <li>GitHub: <a href="https://github.com/nixaut-codelabs">nixaut-codelabs</a></li>
-  <li>Email: codelabsnixaut@gmail.com</li>
-</ul>
-
-<hr/>
-
-<p align="center">
-  <sub>
-    This profile focuses on real-world systems, not demos.
-  </sub>
-</p>
+<sub>npm versions and last-month download counts checked 2026-10-04. They will drift; publishing them anyway is the point.</sub>
