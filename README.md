@@ -93,6 +93,12 @@ timeline
          : opencode-beacon — semantic tooling for AI agents
 ```
 
+## Traction
+
+Measured, not vibes. A monthly snapshot is appended automatically (`scripts/npm-metrics.sh` on a systemd timer) to [`metrics/npm-downloads.md`](metrics/npm-downloads.md).
+
+Baseline **2026-10-04**: `230` downloads/month across the five packages · `8` stars total. Small numbers, published on purpose — the trend line is the point.
+
 ## How I work
 
 - **Bun-first.** TypeScript strict, tests colocated with source, `bun test` as the merge gate.
